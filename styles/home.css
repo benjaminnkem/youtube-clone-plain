@@ -1,0 +1,238 @@
+:root {
+  --foreground-color: #0f0f0f;
+  --background-color: white;
+  --foreground-color-faint: rgb(196, 196, 196);
+
+  --sidebar-space: 240px;
+  --outline-color: rgba(255, 255, 255, 0.694);
+  --outline-color-hover: rgba(255, 255, 255, 0.792);
+  --outline-color-faint: #25252554;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-color: rgb(255, 255, 255);
+    --foreground-color-faint: rgb(196, 196, 196);
+    --background-color: #0f0f0f;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+
+  transition: background-color 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: none;
+}
+
+button {
+  border: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--outline-color-faint);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--outline-color);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline-color-hover);
+}
+
+#logo-con {
+  justify-content: center;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-space);
+  height: 100%;
+  background-color: transparent;
+  overflow-x: hidden;
+}
+
+#tabs {
+  padding-inline: 10px;
+}
+
+.side-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  outline: 1px solid var(--outline-color);
+  margin-left: 10px;
+  margin-inline: 10px;
+}
+
+.side-section {
+  margin-block: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.137);
+}
+
+.active-tab {
+  background-color: rgba(255, 255, 255, 0.137);
+}
+
+.side-item-con {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  padding: 7px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+  margin-block: 4px;
+  cursor: pointer;
+}
+
+.active-tab:hover {
+  background-color: rgba(255, 255, 255, 0.221);
+}
+
+#navbar {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  place-content: centers;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+#search-bar-container {
+  display: grid;
+  grid-template-columns: 7fr 1fr 1fr;
+  align-items: center;
+  padding: 0 20px;
+  margin-inline: auto;
+}
+
+#search-input {
+  outline: 1px solid rgba(255, 255, 255, 0.308);
+  background-color: transparent;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 12px 10px;
+  width: 100%;
+  color: var(--foreground-color);
+  display: inline-block;
+}
+
+#search-btn {
+  padding: 12px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+#audio-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  outline: 1px solid rgba(255, 255, 255, 0.308);
+  margin-left: 10px;
+}
+
+.dum-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  outline: 1px solid rgba(255, 255, 255, 0.308);
+  margin-left: 10px;
+  margin-inline: 10px;
+}
+
+#main {
+  margin-left: var(--sidebar-space);
+}
+
+#content-container {
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.video-content-container {
+  display: grid;
+  margin-block: 20px;
+  user-select: none;
+}
+
+.vid-content {
+  overflow: hidden;
+  height: 200px;
+  border-radius: 15px;
+}
+
+.vid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vid-icon {
+  width: 32px;
+  height: 32px;
+  margin-inline: auto;
+  border-radius: 50%;
+  outline: 1px solid var(--outline-color);
+  margin-left: 10px;
+  margin-inline: 10px;
+  align-self: start;
+}
+
+.desc-con {
+  padding: 4px;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
+
+.vid-desc {
+  margin-left: 6px;
+}
+
+.vid-title {
+  font-weight: 600;
+}
+
+.vid-author-con {
+  font-size: 14px;
+  color: var(--foreground-color-faint);
+  font-size: 400;
+}
